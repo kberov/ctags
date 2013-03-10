@@ -4,6 +4,9 @@
 --regex-perl=/^\s*?\*(\w+)\s*?=/\1/a,alias,aliases/
 --regex-perl=/->helper\(\s?['"]?(\w+)['"]?/\1/h,helper,helpers/
 --regex-perl=/^\s*?our\s*?[\$@%](\w+)/\1/o,our,ours/
---regex-perl=/^=head1\s+(.+)/\1/p,pod,Plain Old Documentation/
---regex-perl=/^=head2\s+(.+)/-- \1/p,pod,Plain Old Documentation/
---regex-perl=/^=head[3-5]\s+(.+)/---- \1/p,pod,Plain Old Documentation/
+--regex-perl=/^\=head1\s+(.+)/\1/p,pod,Plain Old Documentation/
+--regex-perl=/^\=head2\s+(.+)/-- \1/p,pod,Plain Old Documentation/
+--regex-perl=/^\=head[3-5]\s+(.+)/---- \1/p,pod,Plain Old Documentation/
+--recurse=yes
+--langmap=perl:+.pod
+-R

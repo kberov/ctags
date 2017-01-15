@@ -17,6 +17,8 @@ To add the content of this file to your existing ~/.ctags file:
 ```bash
 curl https://raw.githubusercontent.com/kberov/ctags/master/.ctags >> ~/.ctags
 ```
+If you are using Atom, you don't need this file, because its content is already part
+of the [symbols-view](https://atom.io/packages/symbols-view) core package.
 
 How to add support for new symbols?
 ===

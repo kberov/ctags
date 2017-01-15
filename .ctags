@@ -1,3 +1,4 @@
+
 --regex-perl=/with\s+([^;]+)\s*?;/\1/w,role,roles/
 --regex-perl=/extends\s+['"]([^'"]+)['"]\s*?;/\1/e,extends/
 --regex-perl=/use\s+base\s+['"]([^'"]+)['"]\s*?;/\1/e,extends/

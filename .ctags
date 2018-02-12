@@ -10,6 +10,7 @@
 --regex-perl=/^[ \t]*?\*(\w+)[ \t]*?=/\1/b,alias,aliases/
 --regex-perl=/->helper\([ \t]?['"]?(\w+)['"]?/\1/h,helper,helpers/
 --regex-perl=/^[ \t]*?our[ \t]*?[\$@%](\w+)/\1/o,our,ours/
+--regex-perl=/^[ \t]*?my[ \t]*?(\$\w+)[ \t]*?=[ \t]*?sub/\1/s,private subroutine,private subroutines/
 --regex-perl=/^\=head1[ \t]+(.+)/\1/d,pod,POD/
 --regex-perl=/^\=head2[ \t]+(.+)/-- \1/d,pod,POD/
 --regex-perl=/^\=head[3][ \t]+(.+)/--- \1/d,pod,POD/

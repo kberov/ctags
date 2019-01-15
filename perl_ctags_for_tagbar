@@ -1,0 +1,19 @@
+#!/bin/sh
+# I use this script for perl projects with vim + tagbar plugin instead of just
+# ctags binary. This makes a better side window with private subroutines,
+# properties (getters/setters) and helpers for Mojolicious.
+ctags --langmap=perl:+.pod  --regex-perl="/with[ \t]+([^;]+)[ \t]*?;/\1/w,role,roles/" \
+  --regex-perl="/extends[ \t]+['\"]([^'\"]+)['\"][ \t]*?;/\1/e,extends/" \
+  --regex-perl="/^[ \t]*?use[ \t]+base[ \t]+['\"]([^'\"]+)['\"][ \t]*?;/\1/e,extends/" \
+  --regex-perl="/^[ \t]*?use[ \t]+parent[ \t]+['\"]([^'\"]+)['\"][ \t]*?;/\1/e,extends/" \
+  --regex-perl="/^[ \t]*?use[ \t]+Mojo::Base[ \t]+['\"]([^'\"]+)['\"][ \t]*?;/\1/e,extends/" \
+  --regex-perl="/^[ \t]*?use[ \t]+([^;]+)[ \t]*?;/\1/u,use,uses/" \
+  --regex-perl="/^[ \t]*?require[ \t]+((\w|\:)+)/\1/r,require,requires/" \
+  --regex-perl="/^[ \t]*?my[ \t]+(\$\w+)[ \t]*?=[ \t]*?sub/\1/m,private_subroutines/" \
+  --regex-perl="/^[ \t]*?my[ \t]+sub[ \t]+(\w+)/\1/m,private_subroutines/" \
+  --regex-perl="/^\=head1[ \t]+(.+)/\1/d,pod,POD/" \
+  --regex-perl="/^\=head2[ \t]+(.+)/-- \1/d,pod,POD/" \
+  --regex-perl="/^\=head[3][ \t]+(.+)/--- \1/d,pod,POD/" \
+  --regex-perl="/^\=head[4][ \t]+(.+)/---- \1/d,pod,POD/" \
+"$@"
+

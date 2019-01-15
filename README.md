@@ -1,11 +1,11 @@
 Extended Rules to support Modern Perl in Exuberant Ctags
 =====
 This is my Exuberant Ctags (~/.ctags) file.
-I use it lately with Vim with the tagbar plugin. 
+I use it lately with Vim with the tagbar plugin.
 It can be used with many Text editors
 like Vim, Emacs, jEdit, Sublime Text, Atom...
 
-For now it only contains some additional regular expressions 
+For now it only contains some additional regular expressions
 to support more Perl symbols. Feel free to contribute by adding
 regular expressions or improving the existing ones! Pull requests are wellcome.
 
@@ -55,6 +55,33 @@ let g:tagbar_type_perl = {
 
 ```
 
+Another option is to use a specific script with tagbar. Put
+`perl_ctags_for_tagbar` into `~/bin/` and make sure it executable.
+
+```vim
+" Settings to support extended patterns for perl in ctags in tagbar
+let g:tagbar_type_perl = {
+    \ 'ctagstype' : 'perl',
+    \ 'kinds'     : [
+        \ 'p:package:0:0',
+        \ 'w:roles:0:0',
+        \ 'e:extends:0:0',
+        \ 'u:uses:0:0',
+        \ 'r:requires:0:0',
+        \ 'o:ours:0:0',
+        \ 'a:properties:0:0',
+        \ 'b:aliases:0:0',
+        \ 'h:helpers:0:0',
+        \ 's:subroutines:0:0',
+        \ 'm:private_subroutines:0:0',
+        \ 't:old_private_subroutines:0:0',
+        \ 'd:POD:1:0'
+    \ ],
+	\ 'ctagsbin'  : 'perl_ctags_for_tagbar'
+\ }
+
+
+```
 Bugs and limitations
 ===
 

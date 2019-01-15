@@ -56,7 +56,8 @@ let g:tagbar_type_perl = {
 ```
 
 Another option is to use a specific script with tagbar. Put
-`perl_ctags_for_tagbar` into `~/bin/` and make sure it executable.
+`perl_ctags_for_tagbar` from this repo into `~/bin/` and make sure it is
+executable.
 
 ```vim
 " Settings to support extended patterns for perl in ctags in tagbar
